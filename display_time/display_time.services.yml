@@ -1,0 +1,3 @@
+services:
+  display_time.custom_time_service:
+    class: Drupal\display_time\CustomTimeService

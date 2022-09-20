@@ -1,0 +1,5 @@
+name: Display Time
+type: module
+description: 'Display time based on user timezone.'
+package: custom
+core: 8.x

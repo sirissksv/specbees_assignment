@@ -1,0 +1,7 @@
+display_time.admin_settings:
+      path: '/admin/config/select_timezone/adminsettings'
+      defaults:
+        _form: '\Drupal\display_time\Form\TimezoneConfigurationForm'
+        _title: 'Select  time zone from this form'
+      requirements:
+        _permission: 'administer site configuration'
