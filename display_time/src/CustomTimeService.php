@@ -15,16 +15,19 @@ class CustomTimeService {
    */
   public function getUserTimeZone(){
 
-    $config = \Drupal::config('timezone.adminsettings');  
-    
     $timezone = $config->get('timezone');
-   
+
     $date = new \DateTime("now", new \DateTimeZone($timezone) );
 
-    $today = explode(',' ,date("j, M Y - g:i ,a", strtotime($date))); 
+    $new_timestamp = clone $date;
+
+    $today = $new_timestamp->format("j, M Y - g:i ,a");
+
+    $today = explode(',', $today);
 
     $current_time = $today[0].'th'.$today[1].strtoupper($today[2]);
 
     return $current_time;
+    
   }
 }
