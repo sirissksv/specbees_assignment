@@ -56,9 +56,11 @@ class DisplayTime extends BlockBase implements ContainerFactoryPluginInterface {
       '#country' => $country,
       '#city' => $city,
       '#time' => $time,
-      '#cache' => [
-        'max-age' => 0, 
-      ],
+       '#cache' => [
+          'max-age' => 30,
+          'tags' => ['user: administer'],   // for dependencies on data managed by Drupal, like entities & configuration.
+          'contexts' => ['user'],
+        ],
   );
     // $build['display_time_block']['#markup'] = '<p>Your Location is' . $country .' , ' . $city . $time.'</p>';
 
